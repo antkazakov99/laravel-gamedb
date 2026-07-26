@@ -12,4 +12,15 @@ class GameController extends Controller
             'games' => Game::all()
         ]);
     }
+
+    public function show(Game $game, ?string $slug = null) {
+        if ($slug !== $game['slug']) {
+            return redirect()->route('games.show', [
+                'game' => $game,
+                'slug' => $game['slug']
+            ]);
+        }
+
+        return view('games.show', ['game' => $game]);
+    }
 }
