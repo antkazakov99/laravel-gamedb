@@ -7,7 +7,7 @@
 <body>
 <x-public.header />
 <main>
-    <div class="mx-auto max-w-5xl">
+    <div class="mx-auto max-w-5xl py-5 px-2">
         {{ $slot }}
     </div>
 </main>
