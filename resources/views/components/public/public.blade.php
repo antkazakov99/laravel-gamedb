@@ -5,7 +5,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-{{-- header --}}
+<x-public.header />
 <main>
     <div class="mx-auto max-w-5xl">
         {{ $slot }}
