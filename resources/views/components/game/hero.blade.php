@@ -4,5 +4,8 @@
             <img src="{{ $game['cover_path'] }}" alt="{{ $game['name'] }}" class="size-full object-cover"/>
         @endisset
     </div>
-    <h1 class="text-3xl font-bold text-gray-900">{{ $game['name'] }}</h1>
+    <div>
+        <h1 class="text-3xl font-bold text-gray-900">{{ $game['name'] }}</h1>
+        <div>{{ $game->formatReleaseDate() }}</div>
+    </div>
 </section>

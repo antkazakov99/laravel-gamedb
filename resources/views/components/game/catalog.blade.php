@@ -9,6 +9,7 @@
                 </div>
                 <div>
                     <a href="/game/{{ $game['id'] }}/{{ $game['slug'] }}" class="font-bold text-gray-900">{{ $game['name'] }}</a>
+                    <div>{{ $game->formatReleaseDate() }}</div>
                 </div>
             </div>
         @empty
