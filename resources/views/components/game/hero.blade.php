@@ -7,5 +7,6 @@
     <div>
         <h1 class="text-3xl font-bold text-gray-900">{{ $game['name'] }}</h1>
         <div>{{ $game->formatReleaseDate() }}</div>
+        <div>{{ $game->description }}</div>
     </div>
 </section>
