@@ -50,7 +50,8 @@ class GameFactory extends Factory
             'name' => $name,
             'slug' => Str::slug($name),
             'release_date_precision' => $datePrecision,
-            'release_date' => $releaseDate
+            'release_date' => $releaseDate,
+            'description' => $this->faker->paragraph(),
         ];
     }
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('cover_path')->nullable();
             $table->date('release_date')->nullable();
             $table->enum('release_date_precision', DatePrecision::cases())->nullable();
+            $table->text('description')->default('');
             $table->timestamps();
         });
     }
