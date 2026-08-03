@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Developer;
+use App\Models\Game;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Database\Seeder;
 
 class DeveloperSeeder extends Seeder
@@ -12,6 +14,11 @@ class DeveloperSeeder extends Seeder
      */
     public function run(): void
     {
-        Developer::factory()->count(20)->create();
+        $games = Game::all();
+        Developer::factory()->count(20)->create()->each(function (Developer $developer) use ($games) {
+            if (fake()->boolean(90)) {
+                $developer->games()->attach($games->random(rand(1, 10))->pluck('id'));
+            }
+        });
     }
 }

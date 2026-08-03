@@ -6,6 +6,7 @@ use App\Enums\DatePrecision;
 use DateTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Game extends Model
 {
@@ -16,6 +17,11 @@ class Game extends Model
         return [
             'release_date' => 'date',
         ];
+    }
+
+    public function developers(): BelongsToMany
+    {
+        return $this->belongsToMany(Developer::class);
     }
 
     public function formatReleaseDate(): string
